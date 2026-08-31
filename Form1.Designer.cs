@@ -45,12 +45,8 @@ partial class Form1
         this.subtitleLabel.Location = new System.Drawing.Point(43, 90);
 
         this.statusLabel.Text =
-            "This is an early project scaffold used to confirm the C# / .NET development\n" +
-            "environment is correctly configured (see Part B, Section 3).\n\n" +
-            "Planned functionality (login, student record view/search, and admin-only\n" +
-            "add access) is described in the specification and process diagram in\n" +
-            "Part B, Section 4, and will be implemented for the Technical Report\n" +
-            "assessment.";
+            "Planned functionality: user login, student record view/search, and\n" +
+            "admin-only access to add new records.";
         this.statusLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.statusLabel.AutoSize = true;
         this.statusLabel.Location = new System.Drawing.Point(43, 140);
