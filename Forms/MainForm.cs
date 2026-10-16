@@ -125,8 +125,12 @@ public partial class MainForm : Form
             : $"Units for {selected.FullName} (WAM: {selected.Wam?.ToString("F2") ?? "N/A"}):";
     }
 
-    /// <summary>Returns the student in the selected grid row, or null.</summary>
-    private Student? GetSelectedStudent() => studentsGrid.CurrentRow?.DataBoundItem as Student;
+    /// <summary>
+    /// Returns the student in the highlighted grid row, or null. SelectedRows is used rather
+    /// than CurrentRow because CurrentRow still points at the old row while SelectionChanged runs.
+    /// </summary>
+    private Student? GetSelectedStudent() =>
+        studentsGrid.SelectedRows.Count > 0 ? studentsGrid.SelectedRows[0].DataBoundItem as Student : null;
 
     /// <summary>TextChanged event: filters as the user types.</summary>
     private void SearchTextBox_TextChanged(object? sender, EventArgs e) => ApplySearchFilter();

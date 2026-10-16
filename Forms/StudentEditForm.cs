@@ -74,7 +74,7 @@ public partial class StudentEditForm : Form
     /// <summary>Removes the unit selected in the grid.</summary>
     private void RemoveUnitButton_Click(object? sender, EventArgs e)
     {
-        if (enrolmentsGrid.CurrentRow?.DataBoundItem is EnrolmentRow row)
+        if (enrolmentsGrid.SelectedRows.Count > 0 && enrolmentsGrid.SelectedRows[0].DataBoundItem is EnrolmentRow row)
         {
             _enrolments.RemoveAll(x => x.Unit.UnitCode == row.UnitCode);
             RefreshEnrolmentsGrid();
